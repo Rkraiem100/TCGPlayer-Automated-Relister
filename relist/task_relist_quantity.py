@@ -22,7 +22,7 @@ def relist_quantity(sales_data):
         navigate_to_webpage_code = format_task_code(navigate_to_webpage, card_name)  # Defer execution
         task_queue.append(navigate_to_webpage_code)
 
-    print("Step 4: relist card")
-    relist_card_code = format_task_code(relist_card)
-    task_queue.append(relist_card_code)
-    return task_queue
+        print("Step 4: relist card")
+        relist_card_code = format_task_code(relist_card)
+        task_queue.append(relist_card_code)
+        return task_queue
