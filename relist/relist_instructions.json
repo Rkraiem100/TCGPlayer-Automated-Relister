@@ -1,0 +1,18 @@
+{
+    "Arcane Signet": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/535604?OnlyMyInventory=false&SearchValue=Arcane%20Signet&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Snake Rain": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/238064?OnlyMyInventory=false&SearchValue=Snake%20Rain&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 3
+    },
+    "Haggard Lizardose": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/546876?OnlyMyInventory=false&SearchValue=Haggard%20Lizardose&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Escape Tunnel": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/533379?OnlyMyInventory=false&SearchValue=Escape%20Tunnel&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    }
+}

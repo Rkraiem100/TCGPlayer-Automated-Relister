@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.3
+google_api_python_client==2.154.0
+google_auth_oauthlib==1.2.1
+protobuf==5.29.3
+psutil==6.1.1
+PyAutoGUI==0.9.54
+PyGetWindow==0.0.9
+pyzmq==26.2.0
+Requests==2.32.3
+v2==1.0.7
+More that I didn't update and list
