@@ -1,3 +1,4 @@
+#relist_worker.py
 import logging
 import cc
 import inspect
@@ -5,18 +6,18 @@ import inspect
 logging.info(f"relist_worker.py using cc module at: {cc.__file__}")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Path to Brave browser executable
-BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-
 def minimize_screen():
     import pyautogui
     import time
     import logging
     
     logging.info("Minimizing all windows...")
+    print("Minimizing all windows...")
     pyautogui.hotkey("win", "d")
     time.sleep(3)
-    globals()['handle_state']("desktop")  # Use dynamic lookup
+    logging.info("Minimizing Windows Successful~")
+    print("Minimizing Windows Successful~")
+    #globals()['handle_state']("desktop")  # Use dynamic lookup
 
 def open_browser():
     import psutil
@@ -28,17 +29,22 @@ def open_browser():
     BRAVE_PROFILE_PATH = "C:\\BraveProfile"  # Profile directory to persist session
     DEBUGGING_PORT = 9222  # Set the remote debugging port
 
+    logging.info("Attempting to open Brave")
+    print("Attempting to open Brave")
     # Check if Brave is already running
     brave_running = False
     for process in psutil.process_iter(['name']):
         if "brave.exe" in process.info['name'].lower():
             brave_running = True
+            logging.info("Brave is already running.")
             print("Brave is already running.")
             break
 
     # Open Brave with remote debugging if it's not running
     if not brave_running:
         print("Launching Brave Browser with debugging enabled...")
+        logging.info("Launching Brave Browser with debugging enabled...")
+
         subprocess.Popen(
             [BRAVE_PATH, f"--remote-debugging-port={DEBUGGING_PORT}", f"--user-data-dir={BRAVE_PROFILE_PATH}"],
             shell=True
@@ -51,12 +57,14 @@ def open_browser():
     if brave_windows:
         brave_window = brave_windows[0]  # First matching window
         print("Bringing Brave to front...")
+        logging.info("Bringing Brave to front...")
         brave_window.maximize()  # Maximize the window
         brave_window.activate()  # This replaces win32gui.SetForegroundWindow
     else:
+        logging.info("Brave window not found. It may still be launching.")
         print("Brave window not found. It may still be launching.")
 
-    globals()['handle_state']("brave_open")
+    #globals()['handle_state']("brave_open")
 
 def navigate_to_webpage():
     import pyautogui
@@ -79,7 +87,7 @@ def navigate_to_webpage():
     pyautogui.typewrite(TARGET_URL)
     time.sleep(0.5)
     pyautogui.press('enter')
-    time.sleep(3)
+    time.sleep(5)
 
     case = globals()['handle_state']("is_signin_page")
 
@@ -90,11 +98,14 @@ def navigate_to_webpage():
         SIGNIN4 = "C:\\WorkerImages\\Signin4.png"
         SIGNIN5 = "C:\\WorkerImages\\Signin5.png"
         print("Inside sign-in if statement...")
+        logging.info("Inside sign-in if statement...")
+
 
         template1 = cv2.imread(SIGNIN1)  # Load template image
         _, max_val1, _, max_loc1 = cv2.minMaxLoc(cv2.matchTemplate(cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_RGB2BGR), template1, cv2.TM_CCOEFF_NORMED))
         if max_val1 >= 0.7:  # Confidence threshold
             print(f"SIGNIN1 detected with confidence {max_val1}")
+            logging.info(f"SIGNIN1 detected with confidence {max_val1}")
             pyautogui.click(max_loc1[0] + template1.shape[1] // 2, max_loc1[1] + template1.shape[0] // 2)
             time.sleep(0.5)
 
@@ -102,19 +113,26 @@ def navigate_to_webpage():
         _, max_val2, _, max_loc2 = cv2.minMaxLoc(cv2.matchTemplate(cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_RGB2BGR), template2, cv2.TM_CCOEFF_NORMED))
         if max_val2 >= 0.7:  # Confidence threshold
             print(f"SIGNIN2 detected with confidence {max_val2}")
+            logging.info(f"SIGNIN2 detected with confidence {max_val2}")
             pyautogui.click(max_loc2[0] + template2.shape[1] // 2, max_loc2[1] + template2.shape[0] // 2 - 30)
-
+            time.sleep(0.5)
+            
         template3 = cv2.imread(SIGNIN3)  # Load template image
         _, max_val3, _, max_loc3 = cv2.minMaxLoc(cv2.matchTemplate(cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_RGB2BGR), template3, cv2.TM_CCOEFF_NORMED))
         if max_val3 >= 0.7:
             print(f"SIGNIN3 detected with confidence {max_val3}. Clicking Remember Me")
+            logging.info(f"SIGNIN3 detected with confidence {max_val3}. Clicking Remember Me")
             pyautogui.click(max_loc3[0] + template3.shape[1] // 2, max_loc3[1] + template3.shape[0] // 2)
+            time.sleep(0.5)
         
         template5 = cv2.imread(SIGNIN5)  # Load template image
         _, max_val5, _, max_loc5 = cv2.minMaxLoc(cv2.matchTemplate(cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_RGB2BGR), template5, cv2.TM_CCOEFF_NORMED))
         if max_val5 >= 0.7:
             print(f"SIGNIN5 detected with confidence {max_val5}. Logging In")
+            logging.info(f"SIGNIN5 detected with confidence {max_val5}. Logging In")
             pyautogui.click(max_loc5[0] + template5.shape[1] // 2, max_loc5[1] + template5.shape[0] // 2)
+            time.sleep(0.5)
+
 
         time.sleep(3)
 
@@ -136,6 +154,8 @@ def relist_card():
 
 
     print("Attempting to relist")
+    logging.info("Attempting to relist")
+
 
     template1 = cv2.imread(RELIST1)  # Near Mint template
     template2 = cv2.imread(RELIST2)  # Total Qty template
@@ -153,7 +173,10 @@ def relist_card():
     # If both are found with good confidence
     if max_val1 >= 0.7 and max_val2 >= 0.7:
         print(f"Near Mint detected at {max_loc1} with confidence {max_val1}")
+        logging.info(f"Near Mint detected at {max_loc1} with confidence {max_val1}")
         print(f"Total Qty detected at {max_loc2} with confidence {max_val2}")
+        logging.info(f"Total Qty detected at {max_loc2} with confidence {max_val2}")
+
 
         # Click at Total Qty X position but Near Mint Y position
         click_x = max_loc2[0] + template2.shape[1] // 2
@@ -170,9 +193,12 @@ def relist_card():
 
         if max_val3 >= 0.7:
             print(f"Save Changes button detected at {max_loc3} with confidence {max_val3}")
+            logging.info(f"Save Changes button detected at {max_loc3} with confidence {max_val3}")
             pyautogui.click(max_loc3[0] + template3.shape[1] // 2, max_loc3[1] + template3.shape[0] // 2)
         else:
             print("Save Changes button not found with sufficient confidence.")
+            logging.info("Save Changes button not found with sufficient confidence.")
+
 
 
 import os
@@ -208,7 +234,6 @@ def format_task_code(func, card_name=None):
     complete_code = f"""
 import sys
 import json
-print("Python path during execution:", sys.path)
 {current_card}
 CARD_DATA = json.loads('''{json_blob}''')
 {switch_code}

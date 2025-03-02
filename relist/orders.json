@@ -1,0 +1,11 @@
+{
+    "processed_orders": [
+        {
+            "email_id": "",
+            "order_id": "",
+            "timestamp": "",
+            "needs_review": false,
+            "tracked_cards": {}
+        }
+    ]
+}

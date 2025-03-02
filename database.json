@@ -1,4 +1,33 @@
-{
-    "cards": {},
-    "metadata": {}
-}
+[
+    {
+        "Name": "Arcane Signet",
+        "Game": "MTG",
+        "Rarity": "Uncommon",
+        "Set Code": "CMM",
+        "Inventory": {
+            "Current Quantity": 9,
+            "Critical Quantity": 5,
+            "Average Paid Price": 2.5,
+            "Location": "Binder A"
+        },
+        "Sales": {
+            "Lifetime Sold": 10,
+            "Last Sale Date": "2024-01-15",
+            "Average Price Sold": 3.25
+        },
+        "Metadata": {
+            "Card Type": "Artifact",
+            "Color": "Blue",
+            "Archetype": [
+                "Signet"
+            ],
+            "Synergy": [
+                "Five-Color Decks"
+            ],
+            "Mechanics of Interaction": [
+                "Mana Acceleration"
+            ]
+        },
+        "ID": "ID1"
+    }
+]

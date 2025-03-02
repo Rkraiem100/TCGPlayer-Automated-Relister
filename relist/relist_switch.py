@@ -1,3 +1,4 @@
+#relist_switch.py
 def handle_state(state):
     import os
     import pyautogui
@@ -48,6 +49,12 @@ def handle_state(state):
                 import traceback
                 print(f"Full traceback: {traceback.format_exc()}")
                 return False
+
+            
+
+        case "captcha":
+            print("Captcha detected. Redirecting to captcha handling...")
+            return "handle_captcha"
 
         case "unknown":
             print("Unknown state detected. Retrying...")

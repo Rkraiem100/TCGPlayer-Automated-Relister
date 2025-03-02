@@ -25,4 +25,4 @@ def relist_quantity(sales_data):
         print("Step 4: relist card")
         relist_card_code = format_task_code(relist_card)
         task_queue.append(relist_card_code)
-        return task_queue
+    return task_queue

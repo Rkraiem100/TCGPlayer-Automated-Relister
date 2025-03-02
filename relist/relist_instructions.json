@@ -14,5 +14,37 @@
     "Escape Tunnel": {
         "url": "https://store.tcgplayer.com/admin/product/manage/533379?OnlyMyInventory=false&SearchValue=Escape%20Tunnel&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
         "default_quantity": 1
+    },
+    "Molten Gatekeeper": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/553280?OnlyMyInventory=false&SearchValue=Molten%20Gatekeeper&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Twisted Landscape": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/553297?OnlyMyInventory=false&SearchValue=Twisted%20Landscape&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Conduit Pylons": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/544694?OnlyMyInventory=false&SearchValue=Conduit%20Pylons&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Rogue's Passage": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/499592?OnlyMyInventory=false&SearchValue=Rogue%27s%20Passage&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Dazzling Angel": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/591702?OnlyMyInventory=false&SearchValue=Dazzling%20Angel&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Nest Ball": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/488087?OnlyMyInventory=false&SearchValue=nest%20ball&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 4
+    },
+    "Accursed Marauder": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/488087?OnlyMyInventory=false&SearchValue=nest%20ball&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
+    },
+    "Hateful Eidolon": {
+        "url": "https://store.tcgplayer.com/admin/product/manage/488087?OnlyMyInventory=false&SearchValue=nest%20ball&CategoryId=0&SetNameId=0&Rarity=0&DidSearch=true",
+        "default_quantity": 1
     }
 }

@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 # Configuration
 DEBUG = True  # Detailed console output
 MAX_EMAILS_TO_LIST = 100  # Number of email IDs to fetch in list() call
-TRACKED_CARDS = ["Arcane Signet", "Snake Rain", "Haggard Lizardose", "Escape Tunnel"]
+TRACKED_CARDS = ["Arcane Signet", "Snake Rain", "Haggard Lizardose", "Escape Tunnel", "Molten Gatekeeper", "Twisted Landscape", "Conduit Pylons", "Rogue's Passage", "Dazzling Angel"]
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 # Store message IDs in memory
@@ -237,6 +237,10 @@ def fetch_tcgplayer_email(service):
     """
     Main function to fetch and process emails. 
     Returns a dictionary of tracked card sales or None if no sales are found.
+
+    The format of the returned data is a dictionary:
+    "Arcane Signet": 1
+    "Snake Rain": 1
     """
     debug_print("Starting email processing")
     result = process_emails(service)

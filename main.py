@@ -65,10 +65,10 @@ def create_gui():
     )
     relister_button.pack(pady=5)
 
-    scraper_button = tk.Button(
-        root, text="Launch Scraper", command=lambda: launch_sub_program("Scraper/main_scraper.py")
+    inventory_button = tk.Button(
+        root, text="Launch Inventory", command=lambda: launch_sub_program("inventory/main_inventory.py")
     )
-    scraper_button.pack(pady=5)
+    inventory_button.pack(pady=5)
 
     trends_button = tk.Button(
         root, text="Launch Trends", command=lambda: launch_sub_program("Trends/main_trends.py")
